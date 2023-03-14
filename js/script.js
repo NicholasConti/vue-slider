@@ -48,7 +48,7 @@ createApp({
         }
        },
        selectedImg(index, event){
-        console.log(index);
+        this.indexImg = index;
        }
     }
 }).mount('#app');
