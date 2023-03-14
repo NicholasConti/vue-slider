@@ -46,6 +46,9 @@ createApp({
         if(this.indexImg > this.slides.length - 1){
             this.indexImg = 0;
         }
+       },
+       selectedImg(){
+        console.log('cliccato');
        }
     }
 }).mount('#app');
