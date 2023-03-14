@@ -10,12 +10,11 @@
 </head>
 
 <body>
-
+    <!-- VUEJS -->
     <div id="app" v-cloak>
-
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
-
+                <!-- ITEM IN JS -->
                 <div class="item">
                     <img :src="slides[indexImg].image" alt="Spiderman">
                     <div class="text">
@@ -23,12 +22,12 @@
                         <p>{{slides[indexImg].text}}</p>
                     </div>
                 </div>
-
                 <div class="thumbs">
                     <div class="prev" @click="prevImg"></div>
                     <div class="next" @click="nextImg"></div>
+                    <!-- THUMBNAIL W/VUE -->
                     <template v-for="(item, index) in slides">
-                        <div class="thumb">
+                        <div class="thumb active">
                             <img :src="item.image" :alt="item.title" @click="selectedImg(index, $event)" >
                         </div>
                     </template>

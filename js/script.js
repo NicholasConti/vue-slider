@@ -35,18 +35,21 @@ createApp({
         }
     },
     methods: {
+        //function for previous image
        prevImg(){
         this.indexImg--;
         if(this.indexImg < 0){
             this.indexImg = this.slides.length - 1;
         }
        },
+       //function for next image
        nextImg(){
         this.indexImg++;
         if(this.indexImg > this.slides.length - 1){
             this.indexImg = 0;
         }
        },
+       //function for clicked image
        selectedImg(index, event){
         this.indexImg = index;
        }
