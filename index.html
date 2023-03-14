@@ -27,7 +27,7 @@
                     <div class="next" @click="nextImg"></div>
                     <!-- THUMBNAIL W/VUE -->
                     <template v-for="(item, index) in slides">
-                        <div class="thumb active">
+                        <div class="thumb" :class="{active: index === indexImg}">
                             <img :src="item.image" :alt="item.title" @click="selectedImg(index, $event)" >
                         </div>
                     </template>
