@@ -50,5 +50,10 @@ createApp({
        selectedImg(index, event){
         this.indexImg = index;
        }
+    },
+    mounted(){
+        setInterval(() => {
+            return this.nextImg();
+          }, 3000);
     }
 }).mount('#app');
