@@ -47,8 +47,8 @@ createApp({
             this.indexImg = 0;
         }
        },
-       selectedImg(){
-        console.log('cliccato');
+       selectedImg(index, event){
+        console.log(index);
        }
     }
 }).mount('#app');
