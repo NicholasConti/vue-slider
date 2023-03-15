@@ -5,6 +5,8 @@ createApp({
     data(){
         return {
             indexImg: 0,
+            timeOutTime: 3,
+            currentInterval: null,
             slides : [
             {
                 image: 'img/01.webp',
@@ -52,11 +54,17 @@ createApp({
        //function for clicked image
        selectedImg(index, event){
         this.indexImg = index;
+       },
+       stopAutoplay(){
+            clearInterval(this.currentInterval);
+       },
+       startAutoplay(){
+        this.currentInterval = setInterval(() => {
+            this.nextImg();
+          }, this.timeOutTime * 1000);
        }
     },
     mounted(){
-        setInterval(() => {
-            return this.nextImg();
-          }, 3000);
+        this.startAutoplay();
     }
 }).mount('#app');

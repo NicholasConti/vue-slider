@@ -13,12 +13,12 @@
     <!-- VUEJS -->
     <div id="app" v-cloak>
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseover="stopAutoplay" @mouseout="startAutoplay">
                 <!-- ITEM IN JS -->
                 <div class="item">
                     <img :src="slides[indexImg].image" alt="Spiderman">
                     <div class="text">
-                        <h3>{{slides[indexImg].title}}</h3>
+                        <h3>{{slides[indexImg].title.toUpperCase()}}</h3>
                         <p>{{slides[indexImg].text}}</p>
                     </div>
                 </div>
@@ -26,11 +26,9 @@
                     <div class="prev" @click="prevImg"></div>
                     <div class="next" @click="nextImg"></div>
                     <!-- THUMBNAIL W/VUE -->
-                    <template v-for="(item, index) in slides">
-                        <div class="thumb" :class="{active: index === indexImg}">
-                            <img :src="item.image" :alt="item.title" @click="selectedImg(index, $event)" >
-                        </div>
-                    </template>
+                    <div class="thumb" v-for="(item, index) in slides" :class="{active: index === indexImg}">
+                        <img :src="item.image" :alt="item.title" @click="selectedImg(index, $event)" >
+                    </div>
                 </div>
             </div>
         </div>
